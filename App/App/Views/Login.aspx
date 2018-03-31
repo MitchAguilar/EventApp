@@ -55,11 +55,11 @@
 
                 <form action="#" method="post">
                     <div class="form-group has-feedback">
-                        <input type="email" required="required" maxlength="50" class="form-control" placeholder="Email">
+                        <input type="email" required="required" id="U_usuario" runat="server" maxlength="50" class="form-control" placeholder="Email">
                         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                     </div>
                     <div class="form-group has-feedback">
-                        <input type="password" class="form-control" required="required" maxlength="30" minlength="5" placeholder="Password">
+                        <input type="password" class="form-control" required="required" id="U_Password" runat="server" maxlength="30" minlength="5" placeholder="Password">
                         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     </div>
                     <div class="row">

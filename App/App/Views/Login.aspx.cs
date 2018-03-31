@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,7 +17,15 @@ namespace App.Views
 
         protected void Login_Click(object sender, EventArgs e)
         {
-
+            Usuario usr = new Usuario();
+            if (usr.Consoultar_usuario(U_usuario.Value, U_Password.Value))
+            {
+                Response.Write("<script>alert('yes');</script>");
+            }
+            else
+            {
+                Response.Write("<script>alert('no');</script>");
+            }
         }
     }
 }
