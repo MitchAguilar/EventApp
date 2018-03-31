@@ -13,5 +13,10 @@ namespace App.Views
         {
 
         }
+
+        protected void Login_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

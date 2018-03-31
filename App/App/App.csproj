@@ -537,6 +537,7 @@
     <Content Include="Style\bower_components\select2\src\scss\_single.scss" />
     <Content Include="Style\dist\css\adminlte.css.map" />
     <Content Include="Style\dist\css\adminlte.min.css.map" />
+    <Content Include="Style\images\fondo.jpg" />
     <Content Include="Style\plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="Style\plugins\input-mask\phone-codes\phone-codes.json" />
     <Content Include="Views\PrivateViews\menus.Master" />
