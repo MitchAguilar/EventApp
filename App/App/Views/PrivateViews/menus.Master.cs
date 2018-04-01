@@ -11,12 +11,31 @@ namespace App.Views.PrivateViews
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            try
+            {
+                if ("si".Equals(Session["admin"].ToString()))
+                {
+                }
+            }
+            catch (Exception)
+            {
+                Response.Redirect("../../Login.aspx");
+            }
         }
 
         protected void salir_Click(object sender, EventArgs e)
         {
+            Session.Clear();
+            Session.Abandon();
+            Session.Remove("DATOS");
+            try
+            {
+                Response.Redirect("../../Login.aspx");
+            }
+            catch (Exception)
+            {
 
+            }
         }
     }
 }

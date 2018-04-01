@@ -22,8 +22,8 @@ namespace App.Models
             try
             {
                 DataTable dta = new DataTable();
-                dta = dat.ConsultarDatos("CALL `consultar_usuario`('"+usuario+"', '"+contrasena+"')");
-                if (dta.Rows.Count!=0)
+                dta = dat.ConsultarDatos("CALL `consultar_usuario`('" + usuario + "', '" + contrasena + "')");
+                if (dta.Rows.Count != 0)
                 {
                     return dta.Rows[0];
                 }
@@ -32,9 +32,8 @@ namespace App.Models
                     return null;
                 }
             }
-            catch (Exception io)
+            catch (Exception)
             {
-                string aa = io.Message;
                 return null;
             }
         }
