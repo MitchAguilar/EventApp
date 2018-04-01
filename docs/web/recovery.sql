@@ -33,10 +33,14 @@ DELIMITER //
 CREATE DEFINER=`root`@`localhost` PROCEDURE `consultar_usuario`(
 	IN `user` VARCHAR(100),
 	IN `pass` VARCHAR(100)
+
+
+
+
 )
     COMMENT 'procedimiento para consultar si un usuario existe'
 BEGIN
-	select * from usuario where username=user and contrasena=pass;
+	select * from usuario where username=MD5(user) and contrasena=MD5(pass);
 END//
 DELIMITER ;
 
@@ -141,13 +145,13 @@ CREATE TABLE IF NOT EXISTS `permisos_has_rol` (
 DROP TABLE IF EXISTS `persona`;
 CREATE TABLE IF NOT EXISTS `persona` (
   `idPersona` int(11) NOT NULL AUTO_INCREMENT,
-  `Nombres` varchar(45) DEFAULT NULL,
-  `Apellidos` varchar(45) DEFAULT NULL,
-  `Correo` varchar(45) DEFAULT NULL,
-  `Direccion` varchar(45) DEFAULT NULL,
+  `Nombres` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Apellidos` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Correo` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Direccion` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Telefono` int(11) DEFAULT NULL,
   PRIMARY KEY (`idPersona`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- La exportación de datos fue deseleccionada.
 -- Volcando estructura para tabla mydb.precio
@@ -182,13 +186,21 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `registrar persona`(
 
 
 
+
+
+
+
+
+
+
+
 )
     COMMENT 'procedimiento para registrar personas'
 BEGIN
 	insert into persona(Nombres,Apellidos,Correo,Direccion,Telefono)values(nom,apell,corr,direc,tel);
 	insert into usuario(username,contrasena,rol_idrol,persona_idUsuario) values
-	(RSA_ENCRYPT(Correo,'event'),RSA_ENCRYPT(Correo,'event'),1,
-	(SELECT MAX(idPersona) FROM persona));
+	(MD5(corr),MD5(corr),1,
+	(cast((SELECT MAX(idPersona) AS idPersona FROM persona) as char)));
 END//
 DELIMITER ;
 
@@ -227,8 +239,8 @@ CREATE TABLE IF NOT EXISTS `tipo_de_evento` (
 DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE IF NOT EXISTS `usuario` (
   `idusuario` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(100) NOT NULL,
-  `contrasena` varchar(100) NOT NULL,
+  `username` text NOT NULL,
+  `contrasena` text NOT NULL,
   `rol_idrol` int(11) NOT NULL,
   `persona_idUsuario` int(11) NOT NULL,
   PRIMARY KEY (`idusuario`,`rol_idrol`,`persona_idUsuario`),
@@ -236,7 +248,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   KEY `fk_usuario_persona1_idx` (`persona_idUsuario`),
   CONSTRAINT `fk_usuario_persona1` FOREIGN KEY (`persona_idUsuario`) REFERENCES `persona` (`idPersona`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_usuario_rol1` FOREIGN KEY (`rol_idrol`) REFERENCES `rol` (`idrol`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- La exportación de datos fue deseleccionada.
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

@@ -535,6 +535,8 @@
     <Content Include="Style\dist\css\adminlte.min.css.map" />
     <Content Include="Style\plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="Style\plugins\input-mask\phone-codes\phone-codes.json" />
+    <Content Include="Views\images\error.png" />
+    <Content Include="Views\images\true.jpg" />
     <Content Include="Views\PrivateViews\bootstrap\css\bootstrap-theme.css.map" />
     <Content Include="Views\PrivateViews\bootstrap\css\bootstrap-theme.min.css.map" />
     <Content Include="Views\PrivateViews\bootstrap\css\bootstrap.css.map" />

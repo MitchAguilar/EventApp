@@ -19,7 +19,7 @@ namespace App.Views {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText U_usuario;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl U_usuario;
         
         /// <summary>
         /// Control U_Password.

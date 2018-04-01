@@ -1,6 +1,7 @@
 ﻿using App.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -18,13 +19,15 @@ namespace App.Views
         protected void Login_Click(object sender, EventArgs e)
         {
             Usuario usr = new Usuario();
-            if (usr.Consoultar_usuario(U_usuario.Value, U_Password.Value))
+            DataRow usrv = usr.Consoultar_usuario(U_usuario.Value, U_Password.Value);
+            if (usrv != null)
             {
-                Response.Write("<script>alert('yes');</script>");
+                Session["DATOS"] = usrv;
+                Response.Redirect("PrivateViews/index.aspx");
             }
             else
             {
-                Response.Write("<script>alert('no');</script>");
+                ScriptManager.RegisterStartupScript(Page, GetType(), "key", "openInfo3('Usuario o contraseña incorrectos',1);", true);
             }
         }
     }

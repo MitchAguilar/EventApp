@@ -40,8 +40,50 @@
             overflow: hidden;
         }
     </style>
+    <script>
+        function openInfo3(cadena, lo) {
+            if (lo == 1) {
+                $('#info3').modal()
+                var tex = document.getElementById('textUn')
+                tex.innerHTML = cadena;
+            } else {
+                $('#info4').modal()
+                var tex = document.getElementById('textto')
+                tex.innerHTML = cadena;
+            }
+        }
+    </script>
 </head>
 <body class="hold-transition">
+    <div id="info3" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="../Views/images/error.png" class="img-responsive center-block" />
+                    <h3 id="textUn" class="text-center"></h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%--modal bien--%>
+    <div id="info4" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="../Views/images/true.jpg" class="img-responsive center-block" />
+                    <h3 id="textto" class="text-center"></h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <form runat="server">
 
         <div class="login-box">
@@ -55,11 +97,11 @@
 
                 <form action="#" method="post">
                     <div class="form-group has-feedback">
-                        <input type="text" required="required" id="U_usuario" runat="server" maxlength="50" class="form-control" placeholder="Email">
+                        <input type="email" required="required" id="U_usuario" runat="server" maxlength="50" class="form-control" placeholder="Email">
                         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                     </div>
                     <div class="form-group has-feedback">
-                        <input type="password" class="form-control" required="required" id="U_Password" runat="server" maxlength="30" minlength="1" placeholder="Password">
+                        <input type="password" class="form-control" required="required" id="U_Password" runat="server" maxlength="30" minlength="5" placeholder="Password">
                         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     </div>
                     <div class="row">

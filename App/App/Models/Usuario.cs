@@ -2,6 +2,7 @@
 using Proyecto_Club.AccesoDatos.Interface;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 
@@ -16,23 +17,25 @@ namespace App.Models
         /// <param name="usuario">conocido como nickname del usuario</param>
         /// <param name="contrasena">contraseña pertenecinte al dicho nickname</param>
         /// <returns></returns>
-        public bool Consoultar_usuario(string usuario, string contrasena)
+        public DataRow Consoultar_usuario(string usuario, string contrasena)
         {
             try
             {
-                if (dat.ConsultarDatos("CALL `consultar_usuario`('AA', 'AA')").Rows.Count!=0)
+                DataTable dta = new DataTable();
+                dta = dat.ConsultarDatos("CALL `consultar_usuario`('"+usuario+"', '"+contrasena+"')");
+                if (dta.Rows.Count!=0)
                 {
-                    return true;
+                    return dta.Rows[0];
                 }
                 else
                 {
-                    return false;
+                    return null;
                 }
             }
             catch (Exception io)
             {
                 string aa = io.Message;
-                return false;
+                return null;
             }
         }
     }
