@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Admin zone</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
@@ -173,33 +173,11 @@
                                 </span>
                             </a>
                             <ul class="treeview-menu">
-                                <li class=""><a href="inicio.aspx"><i class="fa fa-circle-o"></i>Inicio</a></li>
-                            </ul>
-                        </li>
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-calendar"></i><span>Eventos</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li class=""><a href="VerEventos.aspx"><i class="fa fa-circle-o"></i>Ver Eventos</a></li>
-                                <li class=""><a href="AgregarEventos.aspx"><i class="fa fa-circle-o"></i>Agregar Eventos</a></li>
-                            </ul>
-                        </li>
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-image"></i><span>Imagenes</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li class=""><a href="AgregarCategorias.aspx"><i class="fa fa-circle-o"></i>Agregar Categorias</a></li>
-                                <li class=""><a href="AgregarImagenes.aspx"><i class="fa fa-circle-o"></i>Agregar Imagenes</a></li>
-                                <li class=""><a href="EliminarCategoria.aspx"><i class="fa fa-circle-o"></i>Eliminar Categorias</a></li>
-
+                                <asp:Repeater ID="Menus" runat="server">
+                                    <ItemTemplate>
+                                        <li class=""><a href="<%: Eval("ruta") %>"><i class="fa fa-circle-o"></i><%: Eval("nombre") %></a></li>
+                                    </ItemTemplate>
+                                </asp:Repeater>
                             </ul>
                         </li>
                     </ul>

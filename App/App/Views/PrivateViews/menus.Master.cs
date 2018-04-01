@@ -13,13 +13,14 @@ namespace App.Views.PrivateViews
         {
             try
             {
-                if ("si".Equals(Session["admin"].ToString()))
+                if ("si".Equals(Session["DATOS"].ToString()))
                 {
+
                 }
             }
             catch (Exception)
             {
-                Response.Redirect("../../Login.aspx");
+                Response.Redirect("../../Views/Login.aspx");
             }
         }
 
@@ -30,7 +31,7 @@ namespace App.Views.PrivateViews
             Session.Remove("DATOS");
             try
             {
-                Response.Redirect("../../Login.aspx");
+                Response.Redirect("../../Views/Login.aspx");
             }
             catch (Exception)
             {
