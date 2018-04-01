@@ -1,5 +1,5 @@
-﻿using Proyecto.AccesoDatos.Conection;
-using Proyecto.AccesoDatos.Interface;
+﻿using Proyecto_Club.AccesoDatos.Conection;
+using Proyecto_Club.AccesoDatos.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;

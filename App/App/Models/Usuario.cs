@@ -1,5 +1,5 @@
-﻿using Proyecto.AccesoDatos.Conection;
-using Proyecto.AccesoDatos.Interface;
+﻿using Proyecto_Club.AccesoDatos.Conection;
+using Proyecto_Club.AccesoDatos.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +20,7 @@ namespace App.Models
         {
             try
             {
-                if (dat.ConsultarDatos("CALL `consultar_usuario`('RSA_ENCRYPT(str" + usuario + "','event')), 'RSA_ENCRYPT(str" + contrasena+ "','event'))").Rows.Count!=0)
+                if (dat.ConsultarDatos("CALL `consultar_usuario`('AA', 'AA')").Rows.Count!=0)
                 {
                     return true;
                 }
@@ -29,8 +29,9 @@ namespace App.Models
                     return false;
                 }
             }
-            catch (Exception)
+            catch (Exception io)
             {
+                string aa = io.Message;
                 return false;
             }
         }

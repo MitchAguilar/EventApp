@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{70C6AB8B-16C8-49A4-A233-9C3FFFFFF646}</ProjectGuid>
+    <ProjectGuid>{EFE2A14B-FF80-4297-9A25-835542282F89}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -51,10 +51,6 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="MySql.Data, Version=8.0.10.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
-    <Reference Include="MySql.Data.EntityFramework, Version=8.0.10.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
-    <Reference Include="MySQL.Data.EntityFrameworkCore, Version=8.0.10.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
-    <Reference Include="MySQL.Data.EntityFrameworkCore.Design, Version=8.0.10.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
-    <Reference Include="MySql.Web, Version=8.0.10.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -537,10 +533,8 @@
     <Content Include="Style\bower_components\select2\src\scss\_single.scss" />
     <Content Include="Style\dist\css\adminlte.css.map" />
     <Content Include="Style\dist\css\adminlte.min.css.map" />
-    <Content Include="Style\images\fondo.jpg" />
     <Content Include="Style\plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="Style\plugins\input-mask\phone-codes\phone-codes.json" />
-    <Content Include="Views\PrivateViews\menus.Master" />
     <Content Include="Views\PrivateViews\bootstrap\css\bootstrap-theme.css.map" />
     <Content Include="Views\PrivateViews\bootstrap\css\bootstrap-theme.min.css.map" />
     <Content Include="Views\PrivateViews\bootstrap\css\bootstrap.css.map" />
@@ -549,6 +543,7 @@
     <Content Include="Views\PrivateViews\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Views\PrivateViews\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Views\PrivateViews\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Views\PrivateViews\menus.Master" />
     <Content Include="Views\PrivateViews\plugins\ckeditor\CHANGES.md" />
     <Content Include="Views\PrivateViews\plugins\ckeditor\LICENSE.md" />
     <Content Include="Views\PrivateViews\plugins\ckeditor\plugins\scayt\CHANGELOG.md" />
@@ -6884,6 +6879,7 @@
     <Content Include="Style\dist\js\demo.js" />
     <Content Include="Style\dist\js\pages\dashboard.js" />
     <Content Include="Style\dist\js\pages\dashboard2.js" />
+    <Content Include="Style\images\fondo.jpg" />
     <Content Include="Style\plugins\bootstrap-slider\bootstrap-slider.js" />
     <Content Include="Style\plugins\bootstrap-slider\slider.css" />
     <Content Include="Style\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.all.js" />
@@ -7915,9 +7911,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connection\Conection\Connection.cs" />
-    <Compile Include="Connection\Conection\Datos.cs" />
-    <Compile Include="Connection\Interface\IDatos.cs" />
+    <Compile Include="AccesoDatos\Conection\Connection.cs" />
+    <Compile Include="AccesoDatos\Conection\Datos.cs" />
+    <Compile Include="AccesoDatos\Interface\IDatos.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -7976,9 +7972,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>50581</DevelopmentServerPort>
+          <DevelopmentServerPort>52957</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50581/</IISUrl>
+          <IISUrl>http://localhost:52957/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
