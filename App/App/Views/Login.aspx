@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width" />
     <title>Login</title>
     <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1,  user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
     <link rel="stylesheet" href="../Style/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- Font Awesome -->
@@ -91,7 +91,7 @@
             <!-- /.login-logo -->
             <div class="login-box-body">
                 <div class="login-logo">
-                    <a href="#"><b>Event</b> Aguacate</a>
+                    <a href="#"><b>Mitch</b> Aguacate</a>
                 </div>
                 <p class="login-box-msg">Inicia sesión para continuar al menú</p>
 

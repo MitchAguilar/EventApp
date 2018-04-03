@@ -24,7 +24,8 @@ namespace App.Models
         {
             try
             {
-                if (dat.OperarDatos("CALL `registrar persona`('"+nombres+"', '"+apellidos+"', '"+correo+"', '"+direccion+"', '"+contraseña+"', '"+telefono+"')"))
+                if (dat.OperarDatos("CALL `registrar persona`('"+nombres+"', '"+apellidos+"', '"+correo+"', '"+
+                    direccion+"', '"+contraseña+"', '"+telefono+"')"))
                 {
                     return true;
                 }

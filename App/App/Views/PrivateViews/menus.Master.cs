@@ -13,9 +13,8 @@ namespace App.Views.PrivateViews
         {
             try
             {
-                if ("si".Equals(Session["DATOS"].ToString()))
+                if ("3456".Equals(Session["DATOS"].ToString()))
                 {
-
                 }
             }
             catch (Exception)

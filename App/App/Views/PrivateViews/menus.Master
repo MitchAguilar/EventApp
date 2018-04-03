@@ -175,7 +175,7 @@
                             <ul class="treeview-menu">
                                 <asp:Repeater ID="Menus" runat="server">
                                     <ItemTemplate>
-                                        <li class=""><a href="<%: Eval("ruta") %>"><i class="fa fa-circle-o"></i><%: Eval("nombre") %></a></li>
+                                        <li class=""><a href="<%: Eval("url") %>"><i class="fa fa-circle-o"></i><%: Eval("nombre") %></a></li>
                                     </ItemTemplate>
                                 </asp:Repeater>
                             </ul>
