@@ -8,6 +8,7 @@
 
 <html>
 <head>
+
     <title>login</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8">
@@ -62,13 +63,42 @@
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    <div id="info3" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="../Style/images/error.png" class="img-responsive center-block" />
+                    <h3 id="textUn" class="text-center"></h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="info4" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="../Style/images/true.jpg" class="img-responsive center-block" />
+                    <h3 id="textto" class="text-center"></h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div class="login-box">
         <br />
         <br />
         <!-- /.login-logo -->
         <div class="login-box-body">
             <div class="login-logo">
-                <a href="#"><b>Mitch</b> Aguacate</a>
+                <a href="#"><b>University</b> Event</a>
             </div>
 
             @using (Html.BeginForm())
@@ -76,7 +106,7 @@
                 @Html.AntiForgeryToken()
                 <p class="login-box-msg">Inicia sesión para continuar al menú</p>
                 <div class="form-group has-feedback">
-                    @Html.EditorFor(model => model.user_name, new { htmlAttributes = new { @class = "form-control", @type = "email", @required = "required",@placeholder = "Password" } })
+                    @Html.EditorFor(model => model.user_name, new { htmlAttributes = new { @class = "form-control", @type = "email", @required = "required", @placeholder = "Correo" } })
                     @Html.ValidationMessageFor(model => model.user_name, "", new { @class = "text-danger" })
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 </div>
@@ -93,6 +123,7 @@
                                 <input type="checkbox">
                                 Recuerdame
                             </label>
+                            @Html.Raw(@ViewBag.Error)
                         </div>
                     </div>
                     <div class="col-xs-6">
@@ -102,7 +133,7 @@
 
                 <div class="social-auth-links text-center">
                     <p>- OR -</p>
-                    <a href="Register.aspx" class="btn btn-block btn-social btn-danger btn-flat">
+                    <a href="@Url.Action("registro","Persona")" class="btn btn-block btn-social btn-danger btn-flat">
                         <i class="fa fa-list"></i>No estás registrado? ingresa y Registrate
                     </a>
                 </div>
@@ -123,13 +154,13 @@
     <script src="../Style/plugins/iCheck/icheck.min.js"></script>
 
     <script>
-            $(function () {
-                $('input').iCheck({
-                    checkboxClass: 'icheckbox_square-blue',
-                    radioClass: 'iradio_square-blue',
-                    increaseArea: '20%' /* optional */
-                });
+        $(function () {
+            $('input').iCheck({
+                checkboxClass: 'icheckbox_square-blue',
+                radioClass: 'iradio_square-blue',
+                increaseArea: '20%' /* optional */
             });
+        });
     </script>
 </body>
 </html>
