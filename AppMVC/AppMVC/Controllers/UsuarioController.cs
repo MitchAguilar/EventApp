@@ -19,19 +19,20 @@ namespace AppMVC.Controllers
         [HttpPost]
         public ActionResult login(Usuario obj)
         {
-            DataRow usrv = obj.Consoultar_usuario();
+            DataTable usrv = new DataTable();
+            usrv=obj.Consoultar_usuario();
             if (usrv != null)
             {
+                string abc = usrv.Rows[0]["ROL"].ToString();
                 Session["User"] = usrv;
-                //Session["Nombre"]=usrv.
-                Session["Menu"] = "<p>menu</p>";
-                Response.Redirect("PrivateViews/index.aspx");
+                System.Web.HttpContext.Current.Session["roluser"] = usrv.Rows[0]["ROL"].ToString();
+                return RedirectToAction("../Principal/Inicio");
             }
             else
             {
                 ViewBag.Error = "<script>alert('Usuario o contraseña incorrecto');</script>";
+                return RedirectToAction("login");
             }
-            return View();
         }
     }
 }

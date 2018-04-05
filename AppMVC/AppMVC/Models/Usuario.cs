@@ -24,7 +24,7 @@ namespace AppMVC.Models
         /// <param name="usuario">conocido como nickname del usuario</param>
         /// <param name="contrasena">contraseña pertenecinte al dicho nickname</param>
         /// <returns></returns>
-        public DataRow Consoultar_usuario()
+        public DataTable Consoultar_usuario()
         {
             try
             {
@@ -32,7 +32,7 @@ namespace AppMVC.Models
                 dta = dat.ConsultarDatos("CALL `consultar_usuario`('" + user_name + "', '" + user_pass+ "')");
                 if (dta.Rows.Count != 0)
                 {
-                    return dta.Rows[0];
+                    return dta;
                 }
                 else
                 {

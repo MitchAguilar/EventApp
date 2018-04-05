@@ -1,16 +1,16 @@
 ﻿@{
 
-    //try
-    //{
-    //    if (Session["User"].ToString() == " ")
-    //    {
-    //        Response.Redirect("../Usuario/Login");
-    //    }
-    //}
-    //catch
-    //{
-    //    Response.Redirect("../Usuario/Login");
-    //}
+//try
+//{
+//    if (!Session["User"].ToString().Equals("si"))
+//    {
+//        Response.Redirect("../Usuario/Login");
+//    }
+//}
+//catch
+//{
+//    Response.Redirect("../Usuario/Login");
+//}
 
 }
 <!DOCTYPE html>
@@ -18,7 +18,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RqSoft</title>
+    <title>University Event</title>
     <link rel="icon" type="image/png" id="favicon" href="~/Imagen/LogoRqCircular.png" />
     <!-- Bootstrap 3.3.6 -->
     <link rel="stylesheet" href="~/Style/bootstrap/css/bootstrap.min.css">
@@ -120,50 +120,9 @@
                 </div>
 
                 <!-- sidebar menu: : style can be found in sidebar.less -->
-                @*<ul class="sidebar-menu">
-                        <li class="header">Menu Navegación</li>
-                        @Html.Raw(Session["Menu"].ToString())
-
-                    </ul>*@
                 <ul class="sidebar-menu">
-                    <li class="header">Menú Navegación</li>
-                    <li class="active treeview">
-                        <a href="#">
-                            <i class="fa fa-dashboard"></i><span>Inicio</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li class=""><a href="inicio.aspx"><i class="fa fa-circle-o"></i>Inicio</a></li>
-                        </ul>
-                    </li>
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-calendar"></i><span>Eventos</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li class=""><a href="VerEventos.aspx"><i class="fa fa-circle-o"></i>Ver Eventos</a></li>
-                            <li class=""><a href="AgregarEventos.aspx"><i class="fa fa-circle-o"></i>Agregar Eventos</a></li>
-                        </ul>
-                    </li>
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-image"></i><span>Imagenes</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li class=""><a href="AgregarCategorias.aspx"><i class="fa fa-circle-o"></i>Agregar Categorias</a></li>
-                            <li class=""><a href="AgregarImagenes.aspx"><i class="fa fa-circle-o"></i>Agregar Imagenes</a></li>
-                            <li class=""><a href="EliminarCategoria.aspx"><i class="fa fa-circle-o"></i>Eliminar Categorias</a></li>
-
-                        </ul>
-                    </li>
+                    <li class="header">Menu Navegación</li>
+                    @Html.Raw(Session["Menu"].ToString())
                 </ul>
             </section>
             <!-- /.sidebar -->
