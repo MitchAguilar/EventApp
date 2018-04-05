@@ -6539,10 +6539,12 @@
     <Compile Include="AccesoDatos\Conection\Datos.cs" />
     <Compile Include="AccesoDatos\Interface\IDatos.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\PersonaController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Persona.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -7026,6 +7028,7 @@
     <Content Include="Style\dist\css\adminlte.min.css.map" />
     <Content Include="Style\plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="Style\plugins\input-mask\phone-codes\phone-codes.json" />
+    <Content Include="Views\Persona\registro.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
