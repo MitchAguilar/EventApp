@@ -9,7 +9,12 @@ namespace AppMVC.Models
     {
         public string per_identificacion { get; set; }
         public string per_nombre { get; set; }
+        public string per_apellido { get; set; }
         public string per_correo { get; set; }
         public string per_celular { get; set; }
+
+        public string per_contrasena { get; set; }
+        public string per_repcontrasena{ get; set; }
+        
     }
 }

@@ -8,66 +8,177 @@
 
 <html>
 <head>
+    <title>Registro</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width" />
-    <title>registro</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1,  user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="../Style/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../Style/bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="../Style/bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../Style/dist/css/AdminLTE.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="../Style/plugins/iCheck/square/blue.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <style>
+        body {
+            background-image: url(../Style/images/fondo.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            overflow: hidden;
+        }
+    </style>
+    <script>
+        function openInfo3(cadena, lo) {
+            if (lo == 1) {
+                $('#info3').modal()
+                var tex = document.getElementById('textUn')
+                tex.innerHTML = cadena;
+            } else {
+                $('#info4').modal()
+                var tex = document.getElementById('textto')
+                tex.innerHTML = cadena;
+            }
+        }
+    </script>
 </head>
-<body>
+<body class="hold-transition">
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-    
-    
-    @using (Html.BeginForm()) 
-    {
-        @Html.AntiForgeryToken()
-        
-        <div class="form-horizontal">
-            <h4>Persona</h4>
-            <hr />
+    <div class="login-box">
+        <br />
+        <br />
+        <!-- /.login-logo -->
+        <div class="login-box-body">
+            <div class="login-logo">
+                <a href="#"><b>Mitch</b> Aguacate</a>
+            </div>
 
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.LabelFor(model => model.per_identificacion, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.per_identificacion, new { htmlAttributes = new { @class = "form-control" } })
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <p class="login-box-msg">Registrar a un nuevo miembro</p>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.EditorFor(model => model.per_nombre, new { htmlAttributes = new { @class = "form-control", @required = "required", @placeholder = "Nombres" } })
+                            @Html.ValidationMessageFor(model => model.per_nombre, "", new { @class = "text-danger" })
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group has-feedback">
+                            <div class="form-group has-feedback">
+                                @Html.EditorFor(model => model.per_apellido, new { htmlAttributes = new { @class = "form-control", @placeholder = "Apellidos", @required = "required" } })
+                                @Html.ValidationMessageFor(model => model.per_apellido, "", new { @class = "text-danger" })
+                                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group has-feedback">
+                    @Html.EditorFor(model => model.per_identificacion, new { htmlAttributes = new { @class = "form-control", @required = "required", @placeholder = "Identificación" } })
                     @Html.ValidationMessageFor(model => model.per_identificacion, "", new { @class = "text-danger" })
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
                 </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.per_nombre, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.per_nombre, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.per_nombre, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.per_correo, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.per_correo, new { htmlAttributes = new { @class = "form-control" } })
+
+
+                <div class="form-group has-feedback">
+                    @Html.EditorFor(model => model.per_correo, new { htmlAttributes = new { @class = "form-control", @required = "required", @placeholder = "Email", @type = "email" } })
                     @Html.ValidationMessageFor(model => model.per_correo, "", new { @class = "text-danger" })
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.per_celular, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.per_celular, new { htmlAttributes = new { @class = "form-control" } })
+
+                <div class="form-group has-feedback">
+                    @Html.EditorFor(model => model.per_celular, new { htmlAttributes = new { @class = "form-control", required = "required", @maxlength = "10", @minlength = "10", @placeholder = "Telefono", @type = "number" } })
                     @Html.ValidationMessageFor(model => model.per_celular, "", new { @class = "text-danger" })
+                    <span class="glyphicon glyphicon-phone form-control-feedback"></span>
                 </div>
-            </div>
-    
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default" />
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group has-feedback">
+                            @Html.EditorFor(model => model.per_contrasena, new { htmlAttributes = new { @class = "form-control", @required = "required", @maxlength = "50", @minlength = "5", @placeholder = "Contraseña" } })
+                            @Html.ValidationMessageFor(model => model.per_contrasena, "", new { @class = "text-danger" })
+                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group has-feedback">
+                            <div class="form-group">
+                                @Html.EditorFor(model => model.per_repcontrasena, new { htmlAttributes = new { @class = "form-control", @required = "required", @maxlength = "50", @minlength = "5", @placeholder = "Repita Contraseña" } })
+                                @Html.ValidationMessageFor(model => model.per_repcontrasena, "", new { @class = "text-danger" })
+                                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="checkbox icheck">
+                            <label>
+                                <input type="checkbox" class="form-control" required="required" />
+                                Acepto los <a href="#">términos</a>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-xs-6">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">Registrar</button>
+                        @*<asp:Button Text="Registrar" ID="Registrar" runat="server" OnClick="Registrar_Click" CssClass="btn btn-primary btn-block btn-flat" />*@
+                    </div>
+                    <!-- /.col -->
+                </div>
+
+                <div class="social-auth-links text-center">
+                    <p>- OR -</p>
+                    <a href="Login.aspx" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-list"></i>ya estás registrado? ingresar y loguete</a>
+                </div>
+
+            }
         </div>
-    }
-    
-    <div>
-        @Html.ActionLink("Back to List", "Index")
     </div>
+    @*<div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>*@
+    <!-- /.login-box -->
+    <!-- jQuery 3 -->
+    <script src="../Style/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="../Style/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- iCheck -->
+    <script src="../Style/plugins/iCheck/icheck.min.js"></script>
+
+    <script>
+            $(function () {
+                $('input').iCheck({
+                    checkboxClass: 'icheckbox_square-blue',
+                    radioClass: 'iradio_square-blue',
+                    increaseArea: '20%' /* optional */
+                });
+            });
+    </script>
 </body>
 </html>
