@@ -6394,6 +6394,8 @@
     <Content Include="Style\dist\img\user8-128x128.jpg" />
     <Content Include="Style\dist\js\adminlte.js" />
     <Content Include="Style\dist\js\adminlte.min.js" />
+    <Content Include="Style\dist\js\app.js" />
+    <Content Include="Style\dist\js\app.min.js" />
     <Content Include="Style\dist\js\demo.js" />
     <Content Include="Style\dist\js\pages\dashboard.js" />
     <Content Include="Style\dist\js\pages\dashboard2.js" />
